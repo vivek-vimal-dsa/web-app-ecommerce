@@ -5,7 +5,7 @@ import SignUpIn from "./common";
 import img from "../../assets/Background.jpg";
 
 const SignUpInMaster = () => {
-  const [isUpIn, setIsUpIn] = useState("signUp");
+  const [isUpIn, setIsUpIn] = useState("signIn");
 
   const onSignUpIn = () => {};
 

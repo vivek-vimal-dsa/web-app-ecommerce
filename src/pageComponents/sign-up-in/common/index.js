@@ -71,6 +71,13 @@ const SignUpIn = (props) => {
     setIsChecked(() => !isChecked);
   };
 
+  const onContinue = () => {
+    setFormData(() => ({
+      email: "vivekvimal50@gmail.com",
+      password: "Vivek123@",
+    }));
+  };
+
   const signInUpProps = {
     endPoint: isUpIn === "signIn" ? "auth/signIn" : "auth/signUp",
     payload: formData,
@@ -193,6 +200,17 @@ const SignUpIn = (props) => {
         onClick={onClick}
         isLoading={isLoading}
       />
+
+      {isUpIn === "signIn" && (
+        <Button
+          text={`Continue without sign ${isUpIn === "signIn" ? "In" : "Up"}`}
+          m="1rem 0 0 0"
+          width="100%"
+          color="#FFF"
+          onClick={onContinue}
+          dis={isLoading}
+        />
+      )}
     </StyledSignUp>
   );
 };

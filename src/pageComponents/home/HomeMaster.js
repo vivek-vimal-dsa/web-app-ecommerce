@@ -31,6 +31,20 @@ const HomeMaster = () => {
   const [size, setSize] = useState({ width: 600, height: 550 });
 
   useEffect(() => {
+    setIsLoading(true);
+    AxiosGet({ endPoint: "slideImg" })?.then((res) => {
+      if (res?.status === 200) {
+        setSlideImgData(res?.data);
+        setIsLoading(false);
+      } else {
+        toast.error(res?.response?.data?.message);
+        setIsLoading(false);
+      }
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
     if (width > 1200) {
       setSize({ width: 600, height: 550 });
     } else if (width < 1200) {
@@ -59,20 +73,6 @@ const HomeMaster = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [slideImgData?.length, size?.width]);
-
-  useEffect(() => {
-    setIsLoading(true);
-    AxiosGet({ endPoint: "slideImg" })?.then((res) => {
-      if (res?.status === 200) {
-        setSlideImgData(res?.data);
-        setIsLoading(false);
-      } else {
-        toast.error(res?.response?.data?.message);
-        setIsLoading(false);
-      }
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   const commonCss = {
     fs: "4rem",
