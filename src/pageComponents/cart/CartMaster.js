@@ -50,7 +50,13 @@ const CartMaster = () => {
       {cartLength && (
         <PageWidth height="6rem">
           <Flex>
-            <Heading Text="Checkout" fs="3rem" lh="5rem" />
+            <Heading
+              Text="Checkout"
+              fs="3rem"
+              lh="5rem"
+              color="#FFF"
+              m="1rem 0 0 0"
+            />
           </Flex>
         </PageWidth>
       )}
@@ -80,7 +86,7 @@ const CartMaster = () => {
           </Flex>
         ) : (
           <>
-            <Heading Text="No Product in the cart" center lh="4rem" />
+            <Heading Text="No Product in the cart" center lh="4rem" color="#FFF"/>
             <Button text="Continue Shopping" onClick={onClick} />
           </>
         )}

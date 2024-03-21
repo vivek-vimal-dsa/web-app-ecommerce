@@ -15,6 +15,8 @@ const StyledFlex = styled.div`
   position: ${(props) => (props?.position ? props?.position : "")};
   box-shadow: ${(props) => (props?.bs ? props?.bs : "")};
   overflow-y: ${(props) => (props?.overflowY ? "auto" : "visible")};
+  border-radius: ${(props) => (props.br ? props.br : "")};
+  background-color: ${(props) => (props?.color ? props.color : "initial")};
 
   &::-webkit-scrollbar {
     width: 12px;
@@ -26,7 +28,7 @@ const StyledFlex = styled.div`
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: #0096FF;
+    background-color: #0096ff;
     border-radius: 20px;
   }
 
@@ -130,6 +132,8 @@ const Flex = ({
   mHeight,
   xsw,
   xjc,
+  br,
+  color,
 }) => {
   return (
     <StyledFlex
@@ -159,6 +163,8 @@ const Flex = ({
       mHeight={mHeight}
       xsw={xsw}
       xjc={xjc}
+      br={br}
+      color={color}
     >
       {children}
     </StyledFlex>

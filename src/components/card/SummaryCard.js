@@ -11,8 +11,9 @@ const StyledCard = styled.div`
     rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
   width: 45rem;
   position: relative;
-  padding: 3rem;
+  padding: 3rem 3rem 2.5rem 3rem;
   margin: 2rem 0 0 0;
+  background-color: #fff;
 
   @media (max-width: 768px) {
     width: 100%;

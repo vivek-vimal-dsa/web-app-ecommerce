@@ -191,6 +191,7 @@ const CommonProduct = () => {
             Text={path === "/product" ? "Products" : "New Arrivals"}
             fs="3rem"
             lh="3rem"
+            color="#FFF"
           />
         </Flex>
         {path === "/product" && (

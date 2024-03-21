@@ -65,11 +65,11 @@ const Navbar = () => {
       <StyledNav>
         <NavItem onClick={onHome}>
           <Flex width="20rem" mWidth="15rem" m10Width="10rem" xsw="100%">
-            <HomeIcon color={path === "/home" ? "green" : "#000"} />
+            <HomeIcon color={path === "/home" ? "#0096FF" : "#000"} />
             <Heading
               Text="Let's Shop"
               lh="0"
-              color={path === "/home" ? "green" : "#000"}
+              color={path === "/home" ? "#0096FF" : "#000"}
               null
             />
           </Flex>
@@ -94,7 +94,7 @@ const Navbar = () => {
             sM="0 3rem 0 0"
           >
             <CartContainer onClick={onCart}>
-              <CartIcon color={path === "/cart" ? "green" : "#000"} />
+              <CartIcon color={path === "/cart" ? "#0096FF" : "#000"} />
               <CartNumberDisplay path={path}>{itemDisplay}</CartNumberDisplay>
             </CartContainer>
 

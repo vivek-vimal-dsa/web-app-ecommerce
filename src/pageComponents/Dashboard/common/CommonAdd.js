@@ -133,6 +133,8 @@ const CommonAdd = (props) => {
       mColumn
       mp="2rem 0.5rem"
       mHeight="100%"
+      color="#FFF"
+      br="1.25rem"
     >
       <Flex width="50%" m10Width="100%" column noCenter={!isLoading}>
         {isLoading ? (

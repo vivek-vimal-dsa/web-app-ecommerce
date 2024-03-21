@@ -12,6 +12,8 @@ const StyledCard = styled.div`
   right: 2rem;
   z-index: 999;
   min-width: 8rem;
+  background-color: #fff;
+  border-radius: 1rem;
 
   @media only screen and (max-width: 768px) {
     padding: 1rem;

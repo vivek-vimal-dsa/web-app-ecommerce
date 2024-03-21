@@ -22,7 +22,14 @@ const DashboardMaster = () => {
   return (
     <PageLayout start>
       <PageWidth width="1600px">
-        <Heading Text="Welcome User Admin" width="100%" lh="4rem" />
+        <Heading
+          Text="Welcome User Admin"
+          width="100%"
+          lh="4rem"
+          color="#FFF"
+          m="1.5rem 0 0 0"
+          fs="2.5rem"
+        />
         <motion.div
           style={{ width: "100%" }}
           initial={{ x: "-100vw" }}

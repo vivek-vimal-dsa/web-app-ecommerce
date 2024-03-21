@@ -47,12 +47,12 @@ const Card = (props) => {
           />
         </Image>
         <div style={{ margin: "2rem 0 0 0" }}>
-          <Heading Text={displayTitle} fs="1.5rem" lh="2.5rem" />
-          <Text Text={displayDesc} lh="1.5rem" />
+          <Heading Text={displayTitle} fs="1.5rem" lh="2.5rem" color="#FFF" />
+          <Text Text={displayDesc} lh="1.5rem" color="#FFF" />
         </div>
       </div>
       <Flex jc="space-between" m="0.5rem 0 0 0">
-        <Heading Text={props?.price} />
+        <Heading Text={props?.price} color="#FFF" />
         <Button onClick={props?.addToCart} text="add to cart" width="10rem" />
       </Flex>
     </Box>

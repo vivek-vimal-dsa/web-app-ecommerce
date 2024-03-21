@@ -14,7 +14,11 @@ export const StyledNav = styled.nav`
   position: sticky;
   top: 0;
   z-index: 99;
-  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 0 0 1rem 1rem;
+  background-color: rgba(255, 255, 255);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 `;
 
 export const NavItem = styled.div`
@@ -35,7 +39,7 @@ export const CartNumberDisplay = styled.span`
   border-radius: 50%;
   font-weight: 700;
   font-size: 1.5rem;
-  background: ${(props) => (props?.path === "/cart" ? "green" : "#0096FF")};
+  background: ${(props) => (props?.path === "/cart" ? "#0096FF" : "#0096FF")};
   padding: 0 0.5rem;
   color: ${(props) => (props?.path === "/cart" ? "#FFF" : "#000")};
 `;

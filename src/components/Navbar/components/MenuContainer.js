@@ -12,21 +12,21 @@ const MenuContainer = () => {
     <>
       <NavItem
         onClick={() => router("/dashboard")}
-        style={{ color: path === "/dashboard" ? "green" : "#000" }}
+        style={{ color: path === "/dashboard" ? "#0096FF" : "#000" }}
       >
         DASHBOARD
       </NavItem>
 
       <NavItem
         onClick={() => router("/product")}
-        style={{ color: path === "/product" ? "green" : "#000" }}
+        style={{ color: path === "/product" ? "#0096FF" : "#000" }}
       >
         CATEGORY
       </NavItem>
 
       <NavItem
         onClick={() => router("/account")}
-        style={{ color: path === "/account" ? "green" : "#000" }}
+        style={{ color: path === "/account" ? "#0096FF" : "#000" }}
       >
         ACCOUNT
       </NavItem>

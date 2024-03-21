@@ -46,7 +46,7 @@ const HomeMaster = () => {
 
   useEffect(() => {
     if (width > 1200) {
-      setSize({ width: 600, height: 550 });
+      setSize({ width: 600, height: 450 });
     } else if (width < 1200) {
       setSize({ width: 400, height: 450 });
     } else if (width < 900) {
@@ -85,7 +85,7 @@ const HomeMaster = () => {
 
   return (
     <PageLayout>
-      <PageWidth bg="#F4F6F5" boxShadow padding="3rem 0" margin="0 0 2rem 0">
+      <PageWidth bg="#F4F6F5" boxShadow padding="3rem 0" margin="2rem 0">
         <ResponsiveConatiner>
           <LeftHeroSec data-aos="fade-right">
             <HeadingConatiner>

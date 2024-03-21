@@ -7,7 +7,7 @@ import { useWindowDimensions } from "../../hooks";
 import { motion } from "framer-motion";
 
 const StyledCard = styled(motion.div)`
-  box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+  background-color: #fff;
   padding: 2rem;
 
   @media only screen and (max-width: 768px) {

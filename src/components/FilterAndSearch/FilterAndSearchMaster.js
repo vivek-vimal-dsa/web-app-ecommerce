@@ -22,10 +22,14 @@ const FilterAndSearchMaster = (props) => {
 
   return (
     <Flex
-      bs="rgba(0, 0, 0, 0.09) 0px 3px 12px"
+      // bs="rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      // rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+      // rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset"
       p="2rem"
       m="1rem 0 0 0"
       mp="1rem 0.5rem"
+      color="#FFF"
+      br="1rem"
     >
       <Flex jc={isLoading ? "center" : ""} wrap>
         {isLoading ? (
