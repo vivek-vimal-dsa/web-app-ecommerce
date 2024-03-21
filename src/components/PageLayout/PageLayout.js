@@ -9,7 +9,7 @@ const StyledPageLayout = styled.section`
   justify-content: ${(props) => (props.start ? "flex-start" : "center")};
   flex-direction: column;
   padding: ${(props) => (props.padding ? props.padding : "0")};
-  background: ${(props) => (props.bg ? props.bg : "rgba(0,0,0,0.75)")};
+  background-color: ${(props) => (!props?.img && props.bg ? props.bg : "")};
   background-image: url(${(props) => (props?.img ? props?.img : "")});
   background-position: center center;
   background-attachment: fixed;
