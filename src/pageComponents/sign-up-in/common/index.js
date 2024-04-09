@@ -10,6 +10,9 @@ import toast from "react-hot-toast";
 import { AxiosPost } from "../../../api";
 import { useNavigate } from "react-router-dom";
 import { Checkbox } from "../../../components/Checkbox";
+import { tokenAction } from "../../../store/action";
+import { useDispatch } from "react-redux";
+import { Modal } from "react-responsive-modal";
 
 const StyledSignUp = styled.form`
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
@@ -35,10 +38,24 @@ const SignIN = styled.div`
   cursor: pointer;
 `;
 
+const WaitingGif = styled.div`
+  min-height: 18rem;
+  max-width: 35rem;
+  background-image: url("https://i.pinimg.com/originals/d5/a2/b0/d5a2b01b8294bfb8678d67342b106795.gif");
+  background-size: cover;
+  background-position: center;
+
+  @media only screen and (max-width: 548px) {
+    min-height: auto;
+    width: 100%;
+  }
+`;
+
 const SignUpIn = (props) => {
-  const { isUpIn, setIsUpIn, onClick } = props;
+  const { isUpIn, setIsUpIn } = props;
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const formObj = {
     userName: "",
@@ -49,6 +66,7 @@ const SignUpIn = (props) => {
   const [formData, setFormData] = useState(formObj);
   const [isLoading, setIsLoading] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
+  const [isModelOpen, setIsModelOpen] = useState(false);
 
   useEffect(() => {
     if (isUpIn === "signIn") {
@@ -85,16 +103,24 @@ const SignUpIn = (props) => {
 
   const handleSubmit = (sub) => {
     sub.preventDefault();
+
     const userName = isUpIn === "signUp" ? formData?.userName : true;
     if (!userName || !formData?.email || !formData?.password) {
       toast.error("Please fill all the required fields");
     } else {
       setIsLoading(true);
-      AxiosPost({ ...signInUpProps }).then((res) => {
+      setTimeout(() => {
+        setIsModelOpen(true);
+      }, 4500);
+      AxiosPost({ ...signInUpProps }).then(async (res) => {
         setIsLoading(false);
+        setIsModelOpen(false);
         if (res?.status === 200) {
+          dispatch({
+            ...tokenAction,
+            payload: { token: res?.data?.token, user: res.data.user.email },
+          });
           sessionStorage.setItem("token", res?.data?.token);
-          sessionStorage.setItem("user", res?.data?.user?.email);
           toast.success(res?.data?.message);
           if (isUpIn === "signUp") {
             setIsUpIn("signIn");
@@ -197,7 +223,6 @@ const SignUpIn = (props) => {
         text={isUpIn === "signIn" ? "Sign In" : "Sign Up"}
         m="1rem 0 0 0"
         width="100%"
-        onClick={onClick}
         isLoading={isLoading}
       />
 
@@ -211,6 +236,17 @@ const SignUpIn = (props) => {
           dis={isLoading}
         />
       )}
+
+      <Modal open={isModelOpen} onClose={() => setIsModelOpen(false)} center>
+        <WaitingGif style={{ backgroundColor: "red" }}>
+          <Text Text="Please be patient" lh="2.5rem" fs="1.5rem" />
+          <Text
+            Text="Services are hosted on free server so it will take time only for first login"
+            lh="2rem"
+            fs="1.5rem"
+          />
+        </WaitingGif>
+      </Modal>
     </StyledSignUp>
   );
 };

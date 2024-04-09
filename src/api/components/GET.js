@@ -8,6 +8,6 @@ export const AxiosGet = async ({ endPoint }) => {
     });
     return res;
   } catch (err) {
-    return err;
+    throw err;
   }
 };

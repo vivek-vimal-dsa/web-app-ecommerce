@@ -1,14 +1,19 @@
 import axios from "axios";
 import { BASE_URL } from "../constants";
 
-const token = sessionStorage.getItem("token");
-const formatToken = `Bearer ${token}`;
-
-console.log(`..`, formatToken);
-
 export const commonAxios = axios.create({
   baseURL: BASE_URL,
-  headers: {
-    authorization: formatToken,
-  },
 });
+
+commonAxios.interceptors.request.use(
+  (config) => {
+    const token = sessionStorage.getItem("token");
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (error) => {
+    throw error;
+  }
+);

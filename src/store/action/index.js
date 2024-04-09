@@ -31,6 +31,6 @@ export const category = {
   type: CATEGORY,
 };
 
-export const token = {
+export const tokenAction = {
   type: TOKEN,
 };

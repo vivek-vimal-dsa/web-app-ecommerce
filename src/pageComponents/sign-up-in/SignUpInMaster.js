@@ -7,7 +7,9 @@ import img from "../../assets/Background.jpg";
 const SignUpInMaster = () => {
   const [isUpIn, setIsUpIn] = useState("signIn");
 
-  const onSignUpIn = () => {};
+  const onSignUpIn = (props) => {
+    console.log(`props`);
+  };
 
   const signUpInProps = {
     isUpIn,

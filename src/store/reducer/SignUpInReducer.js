@@ -1,16 +1,14 @@
 import { TOKEN } from "../action/ActionType";
 
-const initialToken = { token: "", email: "" };
+const initialToken = { token: "", user: "" };
 
 export const tokenReducer = (state = initialToken, action) => {
   switch (action.type) {
     case TOKEN:
-      window.localStorage.setItem('token',action?.payload?.token)
-      window.localStorage.setItem('user',action?.payload?.user)
       return {
         ...state,
-        token: window.localStorage.getItem('token'),
-        user: window.localStorage.getItem('user'),
+        token: action?.payload?.token,
+        user: action?.payload?.user,
       };
     default:
       return state;

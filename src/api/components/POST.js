@@ -11,6 +11,6 @@ export const AxiosPost = async (props) => {
     });
     return res;
   } catch (err) {
-    return err;
+    throw err;
   }
 };
