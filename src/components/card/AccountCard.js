@@ -16,8 +16,8 @@ const StyledCard = styled(motion.div)`
 `;
 
 const AccountCard = () => {
-  const userInfo = window.localStorage.getItem("user");
-  const token = window.localStorage.getItem("token");
+  const userInfo = sessionStorage.getItem("user");
+  const token = sessionStorage.getItem("token");
   const { width } = useWindowDimensions();
 
   return (

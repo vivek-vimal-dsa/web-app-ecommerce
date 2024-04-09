@@ -84,7 +84,7 @@ const Navbar = () => {
           mjc="flex-end"
         >
           <Flex width="25rem" mWidth="20rem" jc="space-between" hide>
-            <MenuContainer />
+            <MenuContainer isMobile={false} />
           </Flex>
           <Flex
             width="8rem"
@@ -111,7 +111,7 @@ const Navbar = () => {
       {isSideBarOpen && (
         <SideBar img={bgImg}>
           <div style={{ height: "3rem" }} />
-          <MenuContainer />
+          <MenuContainer isMobile={true} />
           <CloseIcon onClick={onClose} />
         </SideBar>
       )}

@@ -22,11 +22,11 @@ const StyledSignUp = styled.form`
   flex-direction: column;
   padding: 3rem;
   position: relative;
-  border-radius: 1rem;
+  border-radius: 1.75rem;
   border: 1px solid #fff;
 
   @media only screen and (max-width: 548px) {
-    padding: 3rem 1rem 1rem 1rem;
+    padding: 3rem 1.5rem 2.5rem 1.5rem;
     width: 100%;
   }
 `;
@@ -121,6 +121,7 @@ const SignUpIn = (props) => {
             payload: { token: res?.data?.token, user: res.data.user.email },
           });
           sessionStorage.setItem("token", res?.data?.token);
+          sessionStorage.setItem("user", res.data.user.email);
           toast.success(res?.data?.message);
           if (isUpIn === "signUp") {
             setIsUpIn("signIn");
@@ -229,7 +230,7 @@ const SignUpIn = (props) => {
       {isUpIn === "signIn" && (
         <Button
           text={`Continue without sign ${isUpIn === "signIn" ? "In" : "Up"}`}
-          m="1rem 0 0 0"
+          m="1.75rem 0 0 0"
           width="100%"
           color="#FFF"
           onClick={onContinue}

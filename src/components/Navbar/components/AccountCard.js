@@ -26,9 +26,9 @@ const AccountCard = (props) => {
   const navigate = useNavigate();
 
   const onLogout = () => {
-    window.localStorage.removeItem("user");
-    window.localStorage.removeItem("token");
-    toast.success("Logout Successfully");
+    sessionStorage.removeItem("user");
+    sessionStorage.removeItem("token");
+    toast.success("Signout Successfully");
     setIsAccountCard(() => false);
     navigate("/");
   };
@@ -36,7 +36,7 @@ const AccountCard = (props) => {
   return (
     <StyledCard>
       <Text
-        Text="Logout"
+        Text="Signout"
         lh="2rem"
         cursor="pointer"
         onClick={onLogout}

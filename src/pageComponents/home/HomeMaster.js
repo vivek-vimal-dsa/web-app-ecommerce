@@ -85,7 +85,7 @@ const HomeMaster = () => {
 
   return (
     <PageLayout>
-      <PageWidth bg="#F4F6F5" boxShadow padding="3rem 0" margin="2rem 0">
+      <PageWidth bg="#FFF" boxShadow padding="3rem 0" margin="2rem 0">
         <ResponsiveConatiner>
           <LeftHeroSec data-aos="fade-right">
             <HeadingConatiner>

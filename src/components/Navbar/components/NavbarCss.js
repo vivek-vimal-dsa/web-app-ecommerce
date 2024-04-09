@@ -113,7 +113,7 @@ export const SideBar = styled.div`
   top: 0;
   overflow-y: visible;
   background-image: url(${(props) => (props?.img ? props?.img : "")});
-  background-position: 0 10vh;
+  background-position: 0 20vh;
   background-attachment: fixed;
   background-repeat: no-repeat;
 
