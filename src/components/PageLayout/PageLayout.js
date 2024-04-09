@@ -18,7 +18,7 @@ const StyledPageLayout = styled.section`
   overflow-x: hidden;
   margin: ${(props) => (props?.m ? props?.m : "")};
 
-  @media only screen and (max-width: 1600px) {
+  @media only screen and (max-width: 768px) {
     background-size: auto 100%;
   }
 `;

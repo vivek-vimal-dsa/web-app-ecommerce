@@ -93,8 +93,8 @@ const SignUpIn = (props) => {
       AxiosPost({ ...signInUpProps }).then((res) => {
         setIsLoading(false);
         if (res?.status === 200) {
-          window.localStorage.setItem("token", res?.data?.token);
-          window.localStorage.setItem("user", res?.data?.user?.email);
+          sessionStorage.setItem("token", res?.data?.token);
+          sessionStorage.setItem("user", res?.data?.user?.email);
           toast.success(res?.data?.message);
           if (isUpIn === "signUp") {
             setIsUpIn("signIn");
