@@ -16,6 +16,7 @@ const Box = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.5);
   @media only screen and (max-width: 768px) {
     width: 98%;
   }

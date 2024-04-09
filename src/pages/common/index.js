@@ -5,7 +5,7 @@ import PageLayout from "../../components/PageLayout/PageLayout";
 
 const CommonPage = ({ Children }) => {
   return (
-    <PageLayout img="https://cdnb.artstation.com/p/assets/images/images/061/440/105/original/sati-manukian-11.gif?1680792852">
+    <PageLayout img="https://wallpaperaccess.com/full/2825704.gif">
       <Navbar />
       {Children}
       <FooterMaster />
