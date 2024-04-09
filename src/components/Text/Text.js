@@ -13,6 +13,15 @@ const StyledText = styled.p`
   margin: ${(props) => (props.m ? props.m : "")};
   text-transform: ${(props) => (props?.transform ? props?.transform : "")};
 
+  background: ${(props) =>
+    props.gradient
+      ? "linear-gradient(93.01deg, #672CD5 2.23%, #E21185 97.5%)"
+      : null};
+  -webkit-background-clip: ${(props) => (props.gradient ? "text" : null)};
+  background-clip: text;
+  -webkit-text-fill-color: ${(props) =>
+    props.gradient ? "transparent" : null};
+
   &:hover {
     color: ${(props) => (props.hoverColor ? props.hoverColor : null)};
   }

@@ -39,14 +39,16 @@ const SignIN = styled.div`
 `;
 
 const WaitingGif = styled.div`
-  min-height: 18rem;
-  max-width: 35rem;
+  height: auto;
+  width: auto;
   background-image: url("https://i.pinimg.com/originals/d5/a2/b0/d5a2b01b8294bfb8678d67342b106795.gif");
   background-size: cover;
   background-position: center;
+  min-height: 10rem;
+  width: 100%;
 
   @media only screen and (max-width: 548px) {
-    min-height: auto;
+    min-height: 15rem;
     width: 100%;
   }
 `;
@@ -111,7 +113,7 @@ const SignUpIn = (props) => {
       setIsLoading(true);
       setTimeout(() => {
         setIsModelOpen(true);
-      }, 4500);
+      }, 3000);
       AxiosPost({ ...signInUpProps }).then(async (res) => {
         setIsLoading(false);
         setIsModelOpen(false);
@@ -238,15 +240,27 @@ const SignUpIn = (props) => {
         />
       )}
 
-      <Modal open={isModelOpen} onClose={() => setIsModelOpen(false)} center>
-        <WaitingGif style={{ backgroundColor: "red" }}>
-          <Text Text="Please be patient" lh="2.5rem" fs="1.5rem" />
-          <Text
-            Text="Services are hosted on free server so it will take time only for first login"
-            lh="2rem"
-            fs="1.5rem"
-          />
-        </WaitingGif>
+      <Modal
+        open={isModelOpen}
+        onClose={() => setIsModelOpen(false)}
+        center
+        styles={{ width: "20rem" }}
+      >
+        <Text
+          Text="...Please be patient..."
+          lh="2.5rem"
+          fs="1.5rem"
+          gradient
+          center
+        />
+        <Text
+          Text="Services are hosted on free server so it will take time only for first login"
+          lh="2rem"
+          fs="1.5rem"
+          align="justify"
+          //gradient
+        />
+        <WaitingGif />
       </Modal>
     </StyledSignUp>
   );
